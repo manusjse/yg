@@ -8,7 +8,7 @@
 * Trans Protocol：ws
 * host：****.workers.dev(CF Workers)or：appname.herokuapp.com
 * SNI：****.workers.dev(CF Workers)or：appname.herokuapp.com
-* path：/UUID-vless or /UUID-vmess
+* Path：/UUID-vless or /UUID-vmess
 * vmess alterid：0
 * Security Type：tls
 * Disable System Root Certificates：false
