@@ -19,7 +19,7 @@
 * Port：443
 * UUID：8f91b6a0-e8ee-11ea-adc1-0242ac120002   (create new one) 
 * Trans Protocol：ws
-* path：/UUID-trojan
+* Path：/UUID-trojan
 * SNI：****.workers.dev(CF Workers)or：appname.herokuapp.com
 * host：****.workers.dev(CF Workers)or：appname.herokuapp.com
 
@@ -32,7 +32,7 @@
 * Optional: tls;host=appname.herokuapp.com;path=/UUID-ss
 
 
-### CloudFlare Workers（sopport VLESS\VMESS\Trojan-Go WS mode）
+### CloudFlare Workers（sopport VL\VM\Trojan-Go WS mode）
 
 ```
 const SingleDay = 'appname.herokuapp.com'
