@@ -1,8 +1,6 @@
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://dashboard.heroku.com/new?template=https://github.com/manusjse/yg)  
 
-## 1：Xray
-
-### vl+ws+tls or vm+ws+tls
+## 1：vl+ws+tls or vm+ws+tls
 * Server：ip（example：icook.tw）or：appname.herokuapp.com
 * Port：443
 * UUID：8f91b6a0-e8ee-11ea-adc1-0242ac120002   (create new one)
@@ -15,7 +13,7 @@
 * Security Type：tls
 * Disable System Root Certificates：false
 
-## 2：Trojan-Go+ws
+## 2：trojan-go+ws
 
 * Server：ip（example：icook.tw）or：appname.herokuapp.com
 * Port：443
@@ -25,7 +23,7 @@
 * SNI：****.workers.dev(CF Workers)or：appname.herokuapp.com
 * host：****.workers.dev(CF Workers)or：appname.herokuapp.com
 
-## 3：Shadowsocks+ws+tls
+## 3：ss+ws+tls
 
 * Server: appname.herokuapp.com
 * Port: 443
