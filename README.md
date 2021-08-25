@@ -101,4 +101,4 @@ addEventListener(
 )
 ```
 
-### 原作者项目地址：https://github.com/mixool/xrayku
+https://github.com/mixool/xrayku
