@@ -1,47 +1,44 @@
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://dashboard.heroku.com/new?template=https://github.com/manusjse/yg)  
 
-## vmess vless trojan-go shadowsocks对应客户端参数的参考如下,末尾带()里的内容仅为提示
-
 ## 1：Xray
 
-### 代理协议：vless+ws+tls 或 vmess+ws+tls
-* 服务器地址：自选ip（如：icook.tw）或者：应用程序名.herokuapp.com
-* 端口：443
-* 默认UUID：8f91b6a0-e8ee-11ea-adc1-0242ac120002   (务必创建时自定义UUID码)
-* 加密：none
-* 传输协议：ws
-* 伪装类型：none
-* 伪装host：****.workers.dev(CF Workers反代地址)或者：应用程序名.herokuapp.com
-* SNI地址：****.workers.dev(CF Workers反代地址)或者：应用程序名.herokuapp.com
-* path路径：/自定义UUID码-vless 或 /自定义UUID码-vmess    (注意：前有斜杠/)
-* vmess额外id（alterid）：0
-* 底层传输安全：tls
-* 跳过证书验证：false
+### vl+ws+tls or vm+ws+tls
+* Server：ip（example：icook.tw）or：appname.herokuapp.com
+* Port：443
+* UUID：8f91b6a0-e8ee-11ea-adc1-0242ac120002   (create new one)
+* Encryp method：none (vl) or chacha20-poly1305 (vm)
+* Trans Protocol：ws
+* host：****.workers.dev(CF Workers)or：appname.herokuapp.com
+* SNI：****.workers.dev(CF Workers)or：appname.herokuapp.com
+* path：/UUID-vless or /UUID-vmess
+* vmess alterid：0
+* Security Type：tls
+* Disable System Root Certificates：false
 
 ## 2：Trojan-Go+ws
 
-* 服务器地址：自选ip（如：icook.tw）或者：应用程序名.herokuapp.com
-* 端口：443
-* 密码：8f91b6a0-e8ee-11ea-adc1-0242ac120002   (务必创建时自定义UUID码) 
-* 传输协议：ws
-* path路径：/自定义UUID码-trojan  (注意：前有斜杠/)
-* SNI地址：****.workers.dev(CF Workers反代地址)或者：应用程序名.herokuapp.com
-* 伪装host：****.workers.dev(CF Workers反代地址)或者：应用程序名.herokuapp.com
+* Server：ip（example：icook.tw）or：appname.herokuapp.com
+* Port：443
+* UUID：8f91b6a0-e8ee-11ea-adc1-0242ac120002   (create new one) 
+* Trans Protocol：ws
+* path：/UUID-trojan
+* SNI：****.workers.dev(CF Workers)or：appname.herokuapp.com
+* host：****.workers.dev(CF Workers)or：appname.herokuapp.com
 
 ## 3：Shadowsocks+ws+tls
 
-* 服务器地址: 应用程序名.herokuapp.com
-* 端口: 443
-* 密码：8f91b6a0-e8ee-11ea-adc1-0242ac120002   (务必创建时自定义UUID码) 
-* 加密：chacha20-ietf-poly1305
-* 插件选项: tls;host=应用程序名.herokuapp.com;path=/自定义UUID码-ss
+* Server: appname.herokuapp.com
+* Port: 443
+* UUID：8f91b6a0-e8ee-11ea-adc1-0242ac120002   (create new one) 
+* Encryption：chacha20-ietf-poly1305
+* Optional: tls;host=appname.herokuapp.com;path=/UUID-ss
 
 
-### CloudFlare Workers反代代码（支持VLESS\VMESS\Trojan-Go的WS模式，可分别用两个账号的应用程序名（UUID与path保持一致），单双号天分别执行，那一个月就有550+550小时）
+### CloudFlare Workers（sopport VLESS\VMESS\Trojan-Go WS mode）
 
 ```
-const SingleDay = '应用程序名1.herokuapp.com'
-const DoubleDay = '应用程序名2.herokuapp.com'
+const SingleDay = 'appname.herokuapp.com'
+const DoubleDay = 'appname.herokuapp.com'
 addEventListener(
     "fetch",event => {
     
