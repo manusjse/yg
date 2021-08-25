@@ -91,5 +91,3 @@ addEventListener(
     }
 )
 ```
-
-https://github.com/mixool/xrayku
